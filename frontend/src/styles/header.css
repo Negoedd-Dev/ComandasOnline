@@ -5,6 +5,8 @@
   width: 100%;
   padding: 10px;
   background: transparent;
+
+  border: 3px solid red;
 }
 
 .cabecalho .logo {
