@@ -1,0 +1,16 @@
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
