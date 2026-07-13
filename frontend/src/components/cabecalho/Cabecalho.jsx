@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/header.css";
+import "./Cabecalho.css";
 
 export default function Cabecalho() {
   return (
