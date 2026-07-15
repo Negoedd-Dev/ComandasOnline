@@ -1,4 +1,4 @@
-.cabecalho {
+.Header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -7,13 +7,13 @@
   background: transparent;
 }
 
-.cabecalho .logo {
+.Header .logo {
   font-size: 2.5rem;
   font-weight: 900;
   color: #333;
 }
 
-.cabecalho .descricao {
+.Header .descricao {
   text-align: center;
   align-self: center;
   width: 100%;

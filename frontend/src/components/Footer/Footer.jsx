@@ -1,10 +1,10 @@
 import react from "react";
-import "./rodape.css";
+import "./Footer.css";
 
-export default function Rodape() {
+export default function Footer() {
   return (
     <>
-      <footer className="rodape">
+      <footer className="Footer">
         <p>&copy; 2026 AtendeOn. Todos os direitos reservados.</p>
       </footer>
     </>

@@ -1,10 +1,10 @@
 import React from "react";
-import "./Cabecalho.css";
+import "./Header.css";
 
-export default function Cabecalho() {
+export default function Header() {
   return (
     <>
-      <header className="cabecalho">
+      <header className="Header">
         <h1 className="logo">AtendeOn.</h1>
         <p className="descricao">
           A solução digital inteligente para o controle de mesas e fechamento de
