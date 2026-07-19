@@ -1,1 +1,1 @@
-export { default } from "./ComandaLateral";
+export { default } from "./Comanda";

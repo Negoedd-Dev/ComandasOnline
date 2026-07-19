@@ -8,7 +8,7 @@ export const CORES_STATUS = {
   reservada: "#d9a441",
 };
 
-export const USARIO_PADRAO = {
+export const USUARIO_PADRAO = {
   id: "admin",
   nome: "Administrador",
   email: "admin@sistema.com",

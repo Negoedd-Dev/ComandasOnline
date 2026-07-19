@@ -1,0 +1,35 @@
+.comanda {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.comanda h2,
+.comanda h3 {
+  margin-bottom: 15px;
+}
+
+.comanda table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.comanda th,
+.comanda td {
+  border-bottom: 1px solid #444;
+  padding: 5px;
+  text-align: center;
+}
+
+.acoes {
+  display: flex;
+  justify-content: space-between;
+}
