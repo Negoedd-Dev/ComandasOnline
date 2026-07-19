@@ -1,7 +1,6 @@
-import { useState } from "react";
 import EstilosGlobais from "./styles/EstilosGlobais";
-import Header from "./components/Header/Header";
-import ComandaLateral from "./components/Comanda/ComandaLateral";
+import Header from "./components/Header";
+import Comanda from "./components/Comanda";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -9,6 +8,7 @@ export default function App() {
     <>
       <EstilosGlobais />
       <Header />
+      <Comanda />
 
       {/* entre o cabeçalho e o rodape ficará todo o conteúdo principal. */}
       <Footer />
