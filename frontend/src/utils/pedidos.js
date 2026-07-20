@@ -6,10 +6,6 @@ export const atualizarPedido = (pedidos, index, campo, valor) => {
   return pedidos.map((pedido, indice) =>
     indice === index ? { ...pedido, [campo]: valor } : pedido,
   );
-
-  // const novosPedidos = pedidos.map((pedido, indice) =>
-  //   indice === index ? { ...pedido, [campo]: valor } : pedido,
-  // );
 };
 
 export const calcularPedido = (pedidos) => {

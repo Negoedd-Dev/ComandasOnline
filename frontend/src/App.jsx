@@ -1,6 +1,7 @@
 import EstilosGlobais from "./styles/EstilosGlobais";
 import Header from "./components/Header";
-import Comanda from "./components/Comanda";
+import Login from "./pages/Login";
+import MesaCard from "./components/Mesa/MesaCard";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -8,8 +9,8 @@ export default function App() {
     <>
       <EstilosGlobais />
       <Header />
-      <Comanda />
-
+      <Login />
+      <MesaCard />
       {/* entre o cabeçalho e o rodape ficará todo o conteúdo principal. */}
       <Footer />
     </>

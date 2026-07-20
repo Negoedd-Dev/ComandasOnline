@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Comanda.css";
+import "../../components/Button";
 import {
   adicionarPedido,
   atualizarPedido,
@@ -25,7 +26,9 @@ export default function Comanda() {
   return (
     <div className="comanda">
       <h2>Comanda</h2>
-      <button onClick={handleAdicionarPedido}>Adicionar Pedido</button>
+      <button variant="success" onClick={handleAdicionarPedido}>
+        Adicionar Pedido
+      </button>
 
       <table>
         <thead>
@@ -45,7 +48,7 @@ export default function Comanda() {
                   type="text"
                   value={pedido.codigo}
                   onChange={(e) =>
-                    atualizarPedido(index, "codigo", e.target.value)
+                    handleAtualizarPedido(index, "codigo", e.target.value)
                   }
                 />
               </td>
@@ -54,7 +57,7 @@ export default function Comanda() {
                   type="text"
                   value={pedido.descricao}
                   onChange={(e) =>
-                    atualizarPedido(index, "descricao", e.target.value)
+                    handleAtualizarPedido(index, "descricao", e.target.value)
                   }
                 />
               </td>
@@ -64,10 +67,10 @@ export default function Comanda() {
                   min="1"
                   value={pedido.quantidade}
                   onChange={(e) =>
-                    atualizarPedido(
+                    handleAtualizarPedido(
                       index,
                       "quantidade",
-                      parseInt(e.target.value),
+                      Number(e.target.value),
                     )
                   }
                 />
@@ -78,11 +81,17 @@ export default function Comanda() {
                   step="0.01"
                   value={pedido.valor}
                   onChange={(e) =>
-                    atualizarPedido(index, "valor", e.target.value)
+                    handleAtualizarPedido(
+                      index,
+                      "valor",
+                      Number(e.target.value),
+                    )
                   }
                 />
               </td>
-              <td>R$ {(pedido.quantidade * pedido.valor).toFixed(2)}</td>
+              <td>
+                R$ {(pedido.quantidade * Number(pedido.valor || 0)).toFixed(2)}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -91,10 +100,12 @@ export default function Comanda() {
       <h3>Total da Comanda: R$ {calcularPedido(pedidos).toFixed(2)}</h3>
 
       <div className="acoes">
-        <button onClick={handleFinalizarAtendimento}>
+        <button variant="secondary" onClick={handleFinalizarAtendimento}>
           Finalizar Atendimento
         </button>
-        <button onClick={handleCancelar}>Cancelar</button>
+        <button variant="danger" onClick={handleCancelar}>
+          Cancelar
+        </button>
       </div>
     </div>
   );

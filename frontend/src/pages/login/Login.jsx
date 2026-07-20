@@ -1,5 +1,5 @@
 import React from "react";
-import "./TelaLogin.css";
+import "./Login.css";
 
 export default function TelaLogin() {
   return (
