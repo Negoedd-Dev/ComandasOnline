@@ -2,17 +2,17 @@ import "./Button.css";
 
 export default function Button({
   children,
-  onClick,
-  type = "button",
   variant = "primary",
-  disable = false,
+  type = "button",
+  onClick,
+  disabled = false,
 }) {
   return (
     <button
-      classNeme={`btn btn-${varint}`}
+      className={`btn btn-${variant}`}
       type={type}
       onClick={onClick}
-      disable={disable}
+      disabled={disabled}
     >
       {children}
     </button>

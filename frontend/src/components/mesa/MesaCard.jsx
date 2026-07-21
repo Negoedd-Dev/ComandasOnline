@@ -1,41 +1,28 @@
 import React from "react";
 import "./MesaCard.css";
-import "../Button";
+import { TOTAL_MESAS } from "../../utils/constantes";
+import Button, { BUTTON_VARIANTS } from "../../components/Button";
 
 export default function MesaCard() {
+  const mesas = Array.from({ length: TOTAL_MESAS }, (_, index) => ({
+    id: index + 1,
+    numero: index + 1,
+    status: "livre",
+  }));
   return (
     <>
       <div className="mesa-container">
-        <div className="mesa">
-          <h1>Mesa 01</h1>
-          <button className="btn-mesa">Criar Comanda</button>
-          <button className="btn-mesa">Ver Comanda</button>
-          <button className="btn-mesa">Reservar Mesa</button>
-        </div>
-        <div className="mesa">
-          <h1>Mesa 02</h1>
-          <button className="btn-mesa">Criar Comanda</button>
-          <button className="btn-mesa">Ver Comanda</button>
-          <button className="btn-mesa">Reservar Mesa</button>
-        </div>
-        <div className="mesa">
-          <h1>Mesa 03</h1>
-          <button className="btn-mesa">Criar Comanda</button>
-          <button className="btn-mesa">Ver Comanda</button>
-          <button className="btn-mesa">Reservar Mesa</button>
-        </div>
-        <div className="mesa">
-          <h1>Mesa 04</h1>
-          <button className="btn-mesa">Criar Comanda</button>
-          <button className="btn-mesa">Ver Comanda</button>
-          <button className="btn-mesa">Reservar Mesa</button>
-        </div>
-        <div className="mesa">
-          <h1>Mesa 05</h1>
-          <button className="btn-mesa">Criar Comanda</button>
-          <button className="btn-mesa">Ver Comanda</button>
-          <button className="btn-mesa">Reservar Mesa</button>
-        </div>
+        {mesas.map((mesa) => (
+          <div className="mesa" key={mesa.id}>
+            <h2>Mesa {String(mesa.numero).padStart(2, "0")}</h2>
+
+            <Button variant={BUTTON_VARIANTS.PRIMARY}>Criar Comanda</Button>
+
+            <Button variant={BUTTON_VARIANTS.SUCCESS}>Ver Comanda</Button>
+
+            <Button variant={BUTTON_VARIANTS.WARNING}>Reservar Mesa</Button>
+          </div>
+        ))}
       </div>
     </>
   );
