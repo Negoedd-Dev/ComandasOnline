@@ -1,0 +1,69 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.form-container {
+  width: 800px;
+  height: 600px;
+  margin: 40px auto; /* centraliza horizontalmente */
+  padding: 20px;
+  border: 1px solid #ccc; /* borda para destacar */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra leve */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-funcionario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.campo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.endereco {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.endereco .rua {
+  width: 300px;
+}
+
+.endereco input {
+  padding: 8px;
+  width: 150px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  width: 250px;
+  text-align: center;
+}
