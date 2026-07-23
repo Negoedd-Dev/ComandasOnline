@@ -1,5 +1,6 @@
 import React from "react";
 import "./Login.css";
+import Button, { BUTTON_VARIANTS } from "../../components/Button";
 
 export default function TelaLogin() {
   return (
@@ -9,9 +10,7 @@ export default function TelaLogin() {
           <h1 className="login-title">Login</h1>
           <input type="text" placeholder="Usuário" required />
           <input type="password" placeholder="Senha" required />
-          <button type="submit" className="login-button">
-            Entrar
-          </button>
+          <Button variant={BUTTON_VARIANTS.SUCCESS}>Entrar</Button>
         </form>
       </div>
     </>
