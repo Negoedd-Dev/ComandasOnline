@@ -1,5 +1,6 @@
 import React from "react";
 import "./Login.css";
+import "../../components/Button";
 import Button, { BUTTON_VARIANTS } from "../../components/Button";
 
 export default function TelaLogin() {

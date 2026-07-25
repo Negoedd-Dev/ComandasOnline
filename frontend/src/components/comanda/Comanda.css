@@ -4,11 +4,13 @@
   -webkit-backdrop-filter: blur(12px);
   border-radius: 12px;
   padding: 20px;
-  width: 380px;
+  width: 450px;
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
+
+  border: 2px solid black;
 }
 
 .comanda h2 {
@@ -22,6 +24,24 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.comanda .pedido-linha {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.comanda input {
+  height: 25px;
+}
+
+.comanda .digitos {
+  width: 50px;
+}
+
+.comanda .moeda {
+  width: 60px;
 }
 
 .comanda .pedido {
@@ -42,34 +62,4 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
-}
-
-.btn-finalizar {
-  flex: 1;
-  background: rgba(76, 175, 80, 0.3); /* verde vidro */
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 6px;
-  padding: 10px;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-}
-
-.btn-finalizar:hover {
-  background: rgba(76, 175, 80, 0.5);
-}
-
-.btn-cancelar {
-  flex: 1;
-  background: rgba(244, 67, 54, 0.3); /* vermelho vidro */
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 6px;
-  padding: 10px;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-}
-
-.btn-cancelar:hover {
-  background: rgba(244, 67, 54, 0.5);
 }

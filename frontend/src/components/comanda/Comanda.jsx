@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Comanda.css";
 import "../../components/Button";
+import Button, { BUTTON_VARIANTS } from "../../components/Button";
 import {
   adicionarPedido,
   atualizarPedido,
@@ -27,14 +28,15 @@ export default function Comanda() {
     <div className="comanda">
       <h2>Comanda</h2>
 
-      <button className="btn-adicionar" onClick={handleAdicionarPedido}>
+      <Button variant={BUTTON_VARIANTS.PRIMARY} onClick={handleAdicionarPedido}>
         Adicionar Pedido
-      </button>
+      </Button>
 
       <div className="lista-pedidos">
         {pedidos.map((pedido, index) => (
           <div className="pedido-linha" key={index}>
             <input
+              className="digitos"
               type="text"
               placeholder="Código"
               value={pedido.codigo}
@@ -43,6 +45,7 @@ export default function Comanda() {
               }
             />
             <input
+              className="descricao"
               type="text"
               placeholder="Descrição"
               value={pedido.descricao}
@@ -51,6 +54,7 @@ export default function Comanda() {
               }
             />
             <input
+              className="digitos"
               type="number"
               min="1"
               placeholder="Qtd"
@@ -64,6 +68,7 @@ export default function Comanda() {
               }
             />
             <input
+              className="moeda"
               type="number"
               step="0.01"
               placeholder="Valor"
@@ -82,12 +87,15 @@ export default function Comanda() {
       <h3>Total da Comanda: R$ {calcularPedido(pedidos).toFixed(2)}</h3>
 
       <div className="acoes">
-        <button className="btn-finalizar" onClick={handleFinalizarAtendimento}>
+        <Button
+          variant={BUTTON_VARIANTS.SUCCESS}
+          onClick={handleFinalizarAtendimento}
+        >
           Finalizar Atendimento
-        </button>
-        <button className="btn-cancelar" onClick={handleCancelar}>
+        </Button>
+        <Button variant={BUTTON_VARIANTS.DANGER} onClick={handleCancelar}>
           Cancelar
-        </button>
+        </Button>
       </div>
     </div>
   );
