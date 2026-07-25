@@ -26,84 +26,66 @@ export default function Comanda() {
   return (
     <div className="comanda">
       <h2>Comanda</h2>
-      <button variant="success" onClick={handleAdicionarPedido}>
+
+      <button className="btn-adicionar" onClick={handleAdicionarPedido}>
         Adicionar Pedido
       </button>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Código</th>
-            <th>Descrição</th>
-            <th>Quantidade</th>
-            <th>Valor</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pedidos.map((pedido, index) => (
-            <tr key={index}>
-              <td>
-                <input
-                  type="text"
-                  value={pedido.codigo}
-                  onChange={(e) =>
-                    handleAtualizarPedido(index, "codigo", e.target.value)
-                  }
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  value={pedido.descricao}
-                  onChange={(e) =>
-                    handleAtualizarPedido(index, "descricao", e.target.value)
-                  }
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  min="1"
-                  value={pedido.quantidade}
-                  onChange={(e) =>
-                    handleAtualizarPedido(
-                      index,
-                      "quantidade",
-                      Number(e.target.value),
-                    )
-                  }
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  step="0.01"
-                  value={pedido.valor}
-                  onChange={(e) =>
-                    handleAtualizarPedido(
-                      index,
-                      "valor",
-                      Number(e.target.value),
-                    )
-                  }
-                />
-              </td>
-              <td>
-                R$ {(pedido.quantidade * Number(pedido.valor || 0)).toFixed(2)}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="lista-pedidos">
+        {pedidos.map((pedido, index) => (
+          <div className="pedido-linha" key={index}>
+            <input
+              type="text"
+              placeholder="Código"
+              value={pedido.codigo}
+              onChange={(e) =>
+                handleAtualizarPedido(index, "codigo", e.target.value)
+              }
+            />
+            <input
+              type="text"
+              placeholder="Descrição"
+              value={pedido.descricao}
+              onChange={(e) =>
+                handleAtualizarPedido(index, "descricao", e.target.value)
+              }
+            />
+            <input
+              type="number"
+              min="1"
+              placeholder="Qtd"
+              value={pedido.quantidade}
+              onChange={(e) =>
+                handleAtualizarPedido(
+                  index,
+                  "quantidade",
+                  Number(e.target.value),
+                )
+              }
+            />
+            <input
+              type="number"
+              step="0.01"
+              placeholder="Valor"
+              value={pedido.valor}
+              onChange={(e) =>
+                handleAtualizarPedido(index, "valor", Number(e.target.value))
+              }
+            />
+            <span className="total-item">
+              R$ {(pedido.quantidade * Number(pedido.valor || 0)).toFixed(2)}
+            </span>
+          </div>
+        ))}
+      </div>
 
       <h3>Total da Comanda: R$ {calcularPedido(pedidos).toFixed(2)}</h3>
 
       <div className="acoes">
-        <button variant="secondary" onClick={handleFinalizarAtendimento}>
+        <button className="btn-finalizar" onClick={handleFinalizarAtendimento}>
           Finalizar Atendimento
         </button>
-        <button variant="danger" onClick={handleCancelar}>
+        <button className="btn-cancelar" onClick={handleCancelar}>
           Cancelar
         </button>
       </div>

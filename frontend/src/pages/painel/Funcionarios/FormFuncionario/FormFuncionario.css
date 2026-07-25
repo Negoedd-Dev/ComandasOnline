@@ -1,47 +1,29 @@
 h1 {
+  margin-top: 2rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 3.5rem;
 }
 
-/* .form-funcionario {
-  width: 100%;
+.form-funcionario {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
-} */
+  align-items: flex-start;
+  gap: 9px;
+}
 
-.campo {
+.form-funcionario .campo {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.endereco {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-.endereco .rua {
-  width: 300px;
-}
-
-.endereco input {
-  padding: 8px;
-  width: 150px;
-}
-
-label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+.campo label {
+  margin-bottom: 5px;
   font-weight: bold;
+  text-align: left;
 }
 
-input {
+.campo input {
   padding: 8px;
-  width: 250px;
-  text-align: center;
+  width: 35rem;
 }

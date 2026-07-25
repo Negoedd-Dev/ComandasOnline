@@ -27,7 +27,7 @@ export default function FormFuncionario() {
                 required
               />
             </div>
-            <div className="endereco">
+            <div className="campo">
               <label>Endereço:</label>
               <input className="rua" type="text" placeholder="Rua" required />
               <input type="text" placeholder="Número" required />
@@ -49,7 +49,7 @@ export default function FormFuncionario() {
                 required
               />
             </div>
-            <Button variant={BUTTON_VARIANTS.PRIMARY}>Cadastrar</Button>
+            <Button variant={BUTTON_VARIANTS.SUCCESS}>Cadastrar</Button>
           </form>
         </div>
       </div>

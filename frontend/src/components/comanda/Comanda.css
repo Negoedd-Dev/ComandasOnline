@@ -1,35 +1,75 @@
 .comanda {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 350px;
-  height: 100%;
-  background: #222;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.15); /* vidro translúcido */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
   padding: 20px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  overflow-y: auto;
+  width: 380px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.comanda h2,
-.comanda h3 {
-  margin-bottom: 15px;
-}
-
-.comanda table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 15px;
-}
-
-.comanda th,
-.comanda td {
-  border-bottom: 1px solid #444;
-  padding: 5px;
+.comanda h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
   text-align: center;
 }
 
-.acoes {
+.comanda .lista-pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comanda .pedido {
   display: flex;
   justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.comanda .total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.comanda .acoes {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-finalizar {
+  flex: 1;
+  background: rgba(76, 175, 80, 0.3); /* verde vidro */
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.btn-finalizar:hover {
+  background: rgba(76, 175, 80, 0.5);
+}
+
+.btn-cancelar {
+  flex: 1;
+  background: rgba(244, 67, 54, 0.3); /* vermelho vidro */
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.btn-cancelar:hover {
+  background: rgba(244, 67, 54, 0.5);
 }
