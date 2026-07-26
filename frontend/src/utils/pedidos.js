@@ -19,6 +19,10 @@ export const finalizarAtendimento = () => {
   return true;
 };
 
-export const cancelar = () => {
-  return [];
+export const cancelar = (pedidos) => {
+  return []; // simplesmente zera
+};
+
+export const excluirPedido = (pedidos, index) => {
+  return pedidos.filter((_, indice) => indice !== index);
 };

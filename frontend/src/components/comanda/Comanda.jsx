@@ -1,13 +1,14 @@
 import { useState } from "react";
 import "./Comanda.css";
-import "../../components/Button";
-import Button, { BUTTON_VARIANTS } from "../../components/Button";
+import HeaderComanda from "./HeaderComanda";
+import LinhaPedido from "./LinhaPedido";
+import FooterComanda from "./FooterComanda";
 import {
   adicionarPedido,
   atualizarPedido,
-  calcularPedido,
   finalizarAtendimento,
   cancelar,
+  excluirPedido,
 } from "../../utils/pedidos";
 
 export default function Comanda() {
@@ -17,86 +18,32 @@ export default function Comanda() {
   const handleAtualizarPedido = (index, campo, valor) =>
     setPedidos(atualizarPedido(pedidos, index, campo, valor));
   const handleFinalizarAtendimento = () => {
-    if (finalizarAtendimento()) {
+    if (finalizarAtendimento(pedidos)) {
       alert("Atendimento finalizado!");
-      setPedidos([]);
+      setPedidos([]); // limpa a lista
     }
   };
-  const handleCancelar = () => setPedidos(cancelar());
+
+  const handleCancelar = () => setPedidos(cancelar(pedidos));
+
+  const handleExcluirPedido = (index) => {
+    setPedidos(excluirPedido(pedidos, index));
+  };
 
   return (
-    <div className="comanda">
-      <h2>Comanda</h2>
-
-      <Button variant={BUTTON_VARIANTS.PRIMARY} onClick={handleAdicionarPedido}>
-        Adicionar Pedido
-      </Button>
-
-      <div className="lista-pedidos">
-        {pedidos.map((pedido, index) => (
-          <div className="pedido-linha" key={index}>
-            <input
-              className="digitos"
-              type="text"
-              placeholder="Código"
-              value={pedido.codigo}
-              onChange={(e) =>
-                handleAtualizarPedido(index, "codigo", e.target.value)
-              }
-            />
-            <input
-              className="descricao"
-              type="text"
-              placeholder="Descrição"
-              value={pedido.descricao}
-              onChange={(e) =>
-                handleAtualizarPedido(index, "descricao", e.target.value)
-              }
-            />
-            <input
-              className="digitos"
-              type="number"
-              min="1"
-              placeholder="Qtd"
-              value={pedido.quantidade}
-              onChange={(e) =>
-                handleAtualizarPedido(
-                  index,
-                  "quantidade",
-                  Number(e.target.value),
-                )
-              }
-            />
-            <input
-              className="moeda"
-              type="number"
-              step="0.01"
-              placeholder="Valor"
-              value={pedido.valor}
-              onChange={(e) =>
-                handleAtualizarPedido(index, "valor", Number(e.target.value))
-              }
-            />
-            <span className="total-item">
-              R$ {(pedido.quantidade * Number(pedido.valor || 0)).toFixed(2)}
-            </span>
-          </div>
-        ))}
-      </div>
-
-      <h3>Total da Comanda: R$ {calcularPedido(pedidos).toFixed(2)}</h3>
-
-      <div className="acoes">
-        <Button
-          variant={BUTTON_VARIANTS.SUCCESS}
-          onClick={handleFinalizarAtendimento}
-        >
-          Finalizar Atendimento
-        </Button>
-        <Button variant={BUTTON_VARIANTS.DANGER} onClick={handleCancelar}>
-          Cancelar
-        </Button>
-      </div>
+    <div className="comanda-container">
+      <HeaderComanda />
+      <LinhaPedido
+        pedidos={pedidos}
+        onAtualizar={handleAtualizarPedido}
+        onAdicionar={handleAdicionarPedido}
+        onExcluir={handleExcluirPedido}
+      />
+      <FooterComanda
+        pedidos={pedidos}
+        onFinalizar={handleFinalizarAtendimento}
+        onCancelar={handleCancelar}
+      />
     </div>
   );
 }

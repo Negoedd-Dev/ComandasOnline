@@ -1,65 +1,16 @@
-.comanda {
-  background: rgba(255, 255, 255, 0.15); /* vidro translúcido */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.comanda-container {
+  width: 500px;
+  height: 100vh;
+  background: rgba(173, 216, 230, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  padding: 20px;
-  width: 450px;
-  color: #fff;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-
-  border: 2px solid black;
-}
-
-.comanda h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-.comanda .lista-pedidos {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.comanda .pedido-linha {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-
-.comanda input {
-  height: 25px;
-}
-
-.comanda .digitos {
-  width: 50px;
-}
-
-.comanda .moeda {
-  width: 60px;
-}
-
-.comanda .pedido {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.comanda .total {
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: right;
-  margin-top: 10px;
-}
-
-.comanda .acoes {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 30px;
+  overflow: hidden;
+  transition: right 0.35s ease;
 }

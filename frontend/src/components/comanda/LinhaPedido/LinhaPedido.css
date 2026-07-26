@@ -1,0 +1,47 @@
+.pedido {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn-pedido {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  padding: 6px;
+}
+
+.lista-pedidos {
+  flex: 1 1 auto; /* ocupa o espaço disponível */
+  max-height: 550px; /* altura fixa da lista */
+  overflow-y: auto; /* ativa a rolagem vertical */
+  padding: 8px;
+  border: none;
+}
+
+.lista-pedidos input {
+  height: 25px;
+}
+
+/* LinhaPedido.css */
+.pedido-linha {
+  display: grid;
+  grid-template-columns:
+    40px /* Código */
+    1fr /* Descrição */
+    40px /* Quantidade */
+    70px /* Valor */
+    90px /* Subtotal */
+    10px; /* Botão Excluir */
+
+  gap: 3px;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.total-item {
+  font-weight: bold;
+  text-align: center;
+  /* white-space: nowrap; */
+  color: #2563eb;
+}
