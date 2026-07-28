@@ -1,6 +1,7 @@
 import EstilosGlobais from "./styles/EstilosGlobais";
 import Header from "./components/Header";
-import Comanda from "./components/Comanda/Comanda";
+import Operacional from "./pages/operacional";
+// import Comanda from "./components/Comanda/Comanda";
 // import Login from "./pages/Login";
 // import FormFuncionario from "./pages/painel/Funcionarios/FormFuncionario";
 // import FormProduto from "./pages/painel/produtos/FormProduto";
@@ -12,7 +13,8 @@ export default function App() {
       <EstilosGlobais />
       <Header />
       {/* <Login /> */}
-      <Comanda />
+      <Operacional />
+      {/* <Comanda /> */}
       {/* <FormFuncionario /> */}
       {/* <FormProduto /> */}
       {/* entre o cabeçalho e o rodape ficará todo o conteúdo principal. */}
