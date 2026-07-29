@@ -26,4 +26,6 @@ h1 {
 .campo input {
   padding: 8px;
   width: 35rem;
+  border-radius: 8px;
+  margin-bottom: 2px;
 }
