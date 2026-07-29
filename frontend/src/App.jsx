@@ -1,10 +1,12 @@
 import EstilosGlobais from "./styles/EstilosGlobais";
 import Header from "./components/Header";
-import Operacional from "./pages/operacional";
+// import Operacional from "./pages/operacional";
 // import Comanda from "./components/Comanda/Comanda";
 // import Login from "./pages/Login";
-// import FormFuncionario from "./pages/painel/Funcionarios/FormFuncionario";
 // import FormProduto from "./pages/painel/produtos/FormProduto";
+// import AbaFuncionario from "./pages/painel/Funcionarios/AbaFuncionario";
+// import FormFuncionario from "./pages/painel/Funcionarios/FormFuncionario";
+import AbaProduto from "./pages/painel/produtos";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -13,10 +15,12 @@ export default function App() {
       <EstilosGlobais />
       <Header />
       {/* <Login /> */}
-      <Operacional />
+      {/* <Operacional /> */}
       {/* <Comanda /> */}
-      {/* <FormFuncionario /> */}
       {/* <FormProduto /> */}
+      {/* <AbaFuncionario /> */}
+      {/* <FormFuncionario /> */}
+      <AbaProduto />
       {/* entre o cabeçalho e o rodape ficará todo o conteúdo principal. */}
       <Footer />
     </>
