@@ -7,7 +7,8 @@ import Header from "./components/Header";
 // import AbaFuncionario from "./pages/painel/Funcionarios/AbaFuncionario";
 // import FormFuncionario from "./pages/painel/Funcionarios/FormFuncionario";
 // import AbaProduto from "./pages/painel/produtos";
-import AbaRelatorio from "./pages/painel/Relatorios/AbaRelatorio/AbaRelatorio";
+// import AbaRelatorio from "./pages/painel/Relatorios/AbaRelatorio/AbaRelatorio";
+import PainelControle from "./pages/painel/PainelControle";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -22,7 +23,8 @@ export default function App() {
       {/* <AbaFuncionario /> */}
       {/* <FormFuncionario /> */}
       {/* <AbaProduto /> */}
-      <AbaRelatorio />
+      {/* <AbaRelatorio /> */}
+      <PainelControle />
       {/* entre o cabeçalho e o rodape ficará todo o conteúdo principal. */}
       <Footer />
     </>

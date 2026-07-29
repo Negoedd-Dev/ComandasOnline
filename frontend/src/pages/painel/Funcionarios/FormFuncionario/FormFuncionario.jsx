@@ -29,7 +29,7 @@ export default function FormFuncionario() {
             </div>
             <div className="campo">
               <label>Endereço:</label>
-              <input className="rua" type="text" placeholder="Rua" required />
+              <input type="text" placeholder="Rua" required />
               <input type="text" placeholder="Número" required />
               <input
                 type="text"
