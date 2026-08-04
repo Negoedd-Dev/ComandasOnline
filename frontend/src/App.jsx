@@ -2,13 +2,13 @@ import EstilosGlobais from "./styles/EstilosGlobais";
 import Header from "./components/Header";
 // import Operacional from "./pages/operacional";
 // import Comanda from "./components/Comanda/Comanda";
-// import Login from "./pages/Login";
+import Login from "./pages/Login";
 // import FormProduto from "./pages/painel/produtos/FormProduto";
 // import AbaFuncionario from "./pages/painel/Funcionarios/AbaFuncionario";
 // import FormFuncionario from "./pages/painel/Funcionarios/FormFuncionario";
 // import AbaProduto from "./pages/painel/produtos";
 // import AbaRelatorio from "./pages/painel/Relatorios/AbaRelatorio/AbaRelatorio";
-import PainelControle from "./pages/painel/PainelControle";
+// import PainelControle from "./pages/painel/PainelControle";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
     <>
       <EstilosGlobais />
       <Header />
-      {/* <Login /> */}
+      <Login />
       {/* <Operacional /> */}
       {/* <Comanda /> */}
       {/* <FormProduto /> */}
@@ -24,7 +24,7 @@ export default function App() {
       {/* <FormFuncionario /> */}
       {/* <AbaProduto /> */}
       {/* <AbaRelatorio /> */}
-      <PainelControle />
+      {/* <PainelControle /> */}
       {/* entre o cabeçalho e o rodape ficará todo o conteúdo principal. */}
       <Footer />
     </>

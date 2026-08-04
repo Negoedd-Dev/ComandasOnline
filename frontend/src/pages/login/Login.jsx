@@ -1,7 +1,8 @@
 import React from "react";
-import "./Login.css";
+import EstilosGlobais from "../../styles/EstilosGlobais";
 import "../../components/Button";
 import Button, { BUTTON_VARIANTS } from "../../components/Button";
+import "./Login.css";
 
 export default function TelaLogin() {
   return (
