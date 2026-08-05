@@ -1,15 +1,19 @@
-import express from "express";
-import authRoutes from "./auth.routes.js";
-import funcionarioRoutes from "./funcionario.routes.js";
-import produtoRoutes from "./produto.routes.js";
-import relatorioRoutes from "./relatorio.routes.js";
+import { Router } from "express";
+// import authRoutes from "./authRoutes.js";
+// import funcionarioRoutes from "./funcionarioRoutes.js";
+import produtoRoutes from "./produtoRoutes.js";
+// import relatorioRoutes from "./relatorioRoutes.js";
+// import mesaRoutes from "./mesaRoutes.js";
+// import pedidoRoutes from "./pedidoRoutes.js";
 
-const router = express.Router();
+const router = Router();
 
 // Agrupa todas as rotas
-router.use("/auth", authRoutes);
-router.use("/funcionarios", funcionarioRoutes);
+// router.use("/auth", authRoutes);
+// router.use("/funcionarios", funcionarioRoutes);
+// router.use("/mesas", mesaRoutes);
+// router.use("/pedidos", pedidoRoutes);
 router.use("/produtos", produtoRoutes);
-router.use("/relatorios", relatorioRoutes);
+// router.use("/relatorios", relatorioRoutes);
 
 export default router;

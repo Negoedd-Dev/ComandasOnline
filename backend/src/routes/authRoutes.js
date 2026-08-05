@@ -1,15 +1,8 @@
 import express from "express";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
+// import jwt from "jsonwebtoken";
+// import bcrypt from "bcrypt";
 
 const router = express.Router();
-
-// Usuário fake só para testes
-const gestorFake = {
-  id: 1,
-  email: "gestor@empresa.com",
-  senha: bcrypt.hashSync("123456", 8), // senha criptografada
-};
 
 // Rota de login
 router.post("/login", (req, res) => {
@@ -27,7 +20,7 @@ router.post("/login", (req, res) => {
   // Gera token JWT
   const token = jwt.sign(
     { id: gestorFake.id, role: "gestor" },
-    "segredo_super_seguranca",
+    process.env.JWT_SECRET,
     { expiresIn: "1h" },
   );
 
