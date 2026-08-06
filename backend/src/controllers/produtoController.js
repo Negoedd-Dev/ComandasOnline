@@ -14,15 +14,17 @@ export function buscar(req, res) {
   res.json(produto);
 }
 
-export function criar(req, res) {
+export function criar(req, res, next) {
   try {
     const id = produtoService.criarProduto(req.body);
 
-    res.status(201).json({ mensagem: "Produto criado com sucesso", id });
-  } catch (erro) {
-    res
-      .status(erro.status || 500)
-      .json({ sucesso: false, mensagem: erro.message });
+    res.status(201).json({
+      sucesso: true,
+      mensagem: "Produto criado com sucesso",
+      id,
+    });
+  } catch (err) {
+    next(err);
   }
 }
 

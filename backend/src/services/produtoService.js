@@ -9,10 +9,13 @@ export function buscarProduto(id) {
 }
 
 export function criarProduto(produto) {
-  const existente = produtoModel.buscarPorCodigo(produto.codigo);
+  const existe = produtoModel.buscarPorCodigo(produto.codigo);
 
-  if (existente) {
-    throw new Error("Código já cadastrado para outro produto.");
+  if (existe) {
+    const erro = new Error("Código já cadastrado para outro produto.");
+    erro.status = 409;
+
+    throw erro;
   }
   return produtoModel.criarProduto(produto);
 }
