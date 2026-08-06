@@ -9,16 +9,6 @@ export function buscarPorCodigo(codigo) {
 }
 
 export function criarProduto(produto) {
-  const existe = db
-    .prepare("SELECT id FROM produtos WHERE codigo = ?")
-    .get(produto.codigo);
-
-  if (existe) {
-    const erro = new Error("Código já cadastrado.");
-    erro.status = 400;
-    throw erro;
-  }
-
   const stmt = db.prepare(
     `INSERT INTO produtos(codigo, descricao, categoria, preco, ativo) VALUES(?, ?, ?, ?, ?)`,
   );
