@@ -1,4 +1,4 @@
-import Funcionario from "../models/Funcionario.js";
+import funcionario from "../models/funcionarioModel.js";
 
 export async function listarFuncionarios(req, res) {
   const funcionarios = await Funcionario.findAll();
