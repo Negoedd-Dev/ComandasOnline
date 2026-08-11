@@ -1,14 +1,24 @@
 // import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
+import AppError from "../utils/AppError";
 
-export const autenticarToken = (req, res, next) => {
-  const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1];
+export default function authMiddleware(req, res, next) {
+  try {
+    const authHeaders = authMiddleware.headers.authorization;
+    if (!authHeader) {
+      throw new AppError("Token não informado", 401);
+    }
+    const [tipo, token] = authHeader.slip(" ");
 
-  if (!token) return res.status(401).json({ mensagem: "Token não fornecido" });
+    if (tipo !== "Bearer" || !token) {
+      throw new AppError("Formato do token inválido", 401);
+    }
 
-  jwt.verify(token, "segredo_super_seguranca", (err, usuario) => {
-    if (err) return res.status(403).json({ mensagem: "Token inválido" });
-    req.usuario = usuario;
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.usuario = decoded;
+
     next();
-  });
-};
+  } catch (erro) {
+    next(erro);
+  }
+}
