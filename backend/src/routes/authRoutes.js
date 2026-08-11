@@ -1,11 +1,19 @@
-import express from "express";
-// import jwt from "jsonwebtoken";
-// import bcrypt from "bcrypt";
+import { Router } from "express";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 
-const router = express.Router();
+const router = Router();
+
+const gestorFake = {
+  id: 1,
+  email: "gestor@empresa.com",
+  senha: bcrypt.hashSync("123456", 8),
+};
 
 // Rota de login
 router.post("/login", (req, res) => {
+  console.log("Rota acessada com sucesso, LOGIN!");
+
   const { email, senha } = req.body;
 
   if (email !== gestorFake.email) {
@@ -24,7 +32,7 @@ router.post("/login", (req, res) => {
     { expiresIn: "1h" },
   );
 
-  res.json({ token });
+  res.json({ mensagem: "Login realizado com sucesso.", token });
 });
 
 export default router;
