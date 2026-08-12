@@ -36,6 +36,7 @@ coverage/
 
 # Banco SQLite
 # Ignora apenas arquivos temporários, mas mantém o banco principal
+*.db
 *.db-journal
 *.sqlite-journal
 *.sqlite-shm
