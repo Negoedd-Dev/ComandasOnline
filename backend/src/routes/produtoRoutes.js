@@ -1,5 +1,5 @@
-import express from "express";
 import { Router } from "express";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 import {
   listar,
@@ -11,7 +11,7 @@ import {
 
 const router = Router();
 
-router.get("/", listar);
+router.get("/", authMiddleware, listar);
 router.get("/:id", buscar);
 router.post("/", criar);
 router.put("/:id", atualizar);

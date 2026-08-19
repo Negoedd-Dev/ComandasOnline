@@ -1,10 +1,14 @@
-import AppError from "../utils/AppError";
+import AppError from "../utils/AppError.js";
 
 export default function validarCampos(camposObrigatorios) {
   return (req, res, next) => {
     for (const campo of camposObrigatorios) {
-      if (!req.body[campo]) {
-        throw new AppError("Campo obrigatório não informado", 400);
+      const valor = req.body[campo];
+
+      if (valor === undefined || valor === null || valor === "") {
+        return next(
+          new AppError(`Campo obrigatório não informado: ${campo}`, 400),
+        );
       }
     }
     next();
